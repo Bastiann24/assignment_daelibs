@@ -14,9 +14,8 @@
           <td class="text-start px-5">{{ item.name }}</td>
           <td>{{ item.target }}%</td>
           <td>
-            <span v-bind:class="getClass(item.target, item.actual)">
-              {{ item.actual }}%
-            </span></td>
+            <span v-bind:class="getClass(item.target, item.actual)">{{ item.actual }}%</span>
+          </td>
           <td>{{ item.points }}</td>
         </tr>
       </tbody>
@@ -70,9 +69,9 @@ export default {
   methods: {
     getClass(target, actual) {
       if (target > actual) {
-        return "rectangle-red";
+        return "badge green-badge";
       } else {
-        return 'rectangle-green';
+        return "badge red-badge";
       }
 
 
@@ -82,31 +81,45 @@ export default {
 </script>
 
 <style scoped>
+.badge.green-badge {
+  font-size: 1.0em;
+  padding-left: 30px;
+  padding-right: 30px;
+  color:white;
+  background-color: #59B77A;
+}
+
+.badge.red-badge {
+  font-size: 1.0em;
+  padding-left: 30px;
+  padding-right: 30px;
+  color:white;
+  background-color: #ED5E61;
+}
 .table-hover {
   width: 1073px;
   height: 468px;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  font-family:open Arial, Helvetica, sans-serif
+  font-family:open Arial, Helvetica, sans-serif;
+  font-size: 14px;
+
 }
 .table td {
-  padding: 30px;
+  height: 48px;
+  vertical-align:middle;
+}
+.table th{
+  height: 48px;
+  vertical-align:middle;
 }
 
 .table-light {
   color: #5A5A5A;
 }
-.rectangle-red {
-  border-radius: 5px;
-  background-color: #ED5E61;
-  padding: 5px;
+.table-hover tbody tr:hover td.cell-colour-green, .table-hover tbody tr:hover td.cell-colour-red{
   color: white;
 }
-.rectangle-green {
-  border-radius: 5px;
-  background-color: #59B77A;
-  padding: 5px;
-  color: white;
-}
+
+
 </style>
