@@ -73,8 +73,6 @@ export default {
       } else {
         return "badge red-badge";
       }
-
-
     }
   }
 }
@@ -88,7 +86,6 @@ export default {
   color:white;
   background-color: #59B77A;
 }
-
 .badge.red-badge {
   font-size: 1.0em;
   padding-left: 30px;
@@ -103,7 +100,6 @@ export default {
   margin-right: auto;
   font-family:open Arial, Helvetica, sans-serif;
   font-size: 14px;
-
 }
 .table td {
   height: 48px;
@@ -113,13 +109,10 @@ export default {
   height: 48px;
   vertical-align:middle;
 }
-
 .table-light {
   color: #5A5A5A;
 }
 .table-hover tbody tr:hover td.cell-colour-green, .table-hover tbody tr:hover td.cell-colour-red{
   color: white;
 }
-
-
 </style>
